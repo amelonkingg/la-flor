@@ -185,10 +185,12 @@ footer {
 
     .menu-btn {
         display: block;
+        color: #C76B83;
+
     }
 
     .nav-links {
-        display: none;
+         display: none;
         flex-direction: column;
         position: absolute;
         top: 65px;

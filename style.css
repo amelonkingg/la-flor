@@ -484,6 +484,7 @@ footer .copyright {
         display: block;
         margin-left: auto;
         z-index: 1001;
+        color: #C76B83;
     }
 
     .nav-links {
