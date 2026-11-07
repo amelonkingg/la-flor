@@ -477,26 +477,39 @@ footer .copyright {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
     .menu-btn {
         display: block;
         margin-left: auto;
+        z-index: 1001;
     }
 
     .nav-links {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-
+    .nav-button {
+        display: none;
+    }
 }
+
+
 
 #backToTop {
     position: fixed;
