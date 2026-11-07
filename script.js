@@ -42,3 +42,7 @@ if (backToTop) {
     });
 
 }
+
+menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
