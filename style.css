@@ -501,7 +501,7 @@ footer .copyright {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-button {
