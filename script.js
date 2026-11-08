@@ -29,8 +29,12 @@ navLinks.querySelectorAll("a").forEach(function (link) {
 });
 
 // პროდუქტების ჩატვირთვა
+let allProducts = [];
+let visibleCount = 12;
+
 async function loadProducts() {
     const productGrid = document.querySelector(".product-grid");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
 
     const { data, error } = await supabaseClient
         .from("products")
@@ -42,15 +46,21 @@ async function loadProducts() {
         return;
     }
 
+    allProducts = data;
+    visibleCount = 12;
+
+    showProducts();
+}
+
+function showProducts() {
+    const productGrid = document.querySelector(".product-grid");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
     productGrid.innerHTML = "";
 
-    const homepageProducts = data.filter(function (product) {
-        const match = product.image_url.match(/bouquet-(\d+)\.jpeg$/);
+    const visibleProducts = allProducts.slice(0, visibleCount);
 
-        return match && Number(match[1]) <= 19;
-    });
-
-    homepageProducts.forEach(function (product) {
+    visibleProducts.forEach(function (product) {
         const card = document.createElement("div");
         card.className = "product-card";
 
@@ -70,7 +80,8 @@ async function loadProducts() {
         if (product.single_price !== null) {
             const singlePrice = document.createElement("p");
             singlePrice.className = "price";
-            singlePrice.textContent = "ერთი ცალი: " + product.single_price + " ₾";
+            singlePrice.textContent =
+                "ერთი ცალი: " + product.single_price + " ₾";
 
             info.appendChild(singlePrice);
         }
@@ -80,10 +91,17 @@ async function loadProducts() {
 
         productGrid.appendChild(card);
     });
+
+    loadMoreBtn.style.display =
+        visibleCount < allProducts.length ? "block" : "none";
 }
 
-loadProducts();
+document.getElementById("loadMoreBtn").addEventListener("click", function () {
+    visibleCount += 12;
+    showProducts();
+});
 
+loadProducts();
 // Back to Top
 const backToTop = document.getElementById("backToTop");
 

@@ -361,17 +361,7 @@ footer .copyright {
 
 @media (max-width: 600px) {
 
-    .navbar {
-        justify-content: center;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+    
 
     .nav-links a {
         font-size: 12px;
@@ -508,6 +498,7 @@ footer .copyright {
     .nav-button {
         display: none;
     }
+    7
 }
 
 
@@ -548,4 +539,20 @@ footer .copyright {
 .admin-link:hover {
     background: #a94f68;
     transform: translateY(-3px);
+}
+.load-more-btn {
+    display: none;
+    margin: 35px auto 0;
+    padding: 13px 35px;
+    background: #c77b85;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.load-more-btn:hover {
+    background: #a95e69;
 }
