@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>La Flor Admin</title>
+</head>
+
+<body>
+
+    <h1>La Flor Admin Panel</h1>
+    <p>ადმინ-პანელი</p>
+
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">შესვლა</button>
+    </form>
+    <div id="productSection" style="display: none;">
+
+        <h2>პროდუქტის დამატება</h2>
+
+        <form id="productForm">
+            <input type="number" id="productPrice" placeholder="ფასი (₾)" required>
+            <input type="number" id="productSinglePrice" placeholder="ერთი ცალის ფასი (₾)">
+
+            <input type="file" id="productImage" accept="image/*" required>
+
+            <button type="submit">დამატება</button>
+        </form>
+        <h2>ატვირთული პროდუქტები</h2>
+        <div id="productList"></div>
+
+        <p id="productMessage"></p>
+
+    </div>
+
+    <p id="message"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

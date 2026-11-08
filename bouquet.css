@@ -264,3 +264,19 @@ footer {
 #backToTop:hover {
     background-color: #a94f67;
 }
+.load-more-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 14px 35px;
+    background: #c76b83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.load-more-btn:hover {
+    background: #a94f68;
+}

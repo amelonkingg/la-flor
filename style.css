@@ -531,3 +531,21 @@ footer .copyright {
 #backToTop:hover {
     background: #a94f67;
 }
+.admin-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background: #c76b83;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.admin-link:hover {
+    background: #a94f68;
+    transform: translateY(-3px);
+}
